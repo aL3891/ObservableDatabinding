@@ -1,7 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <Authors>Allan Lindqvist</Authors>
+    <Company />
+    <Description>Library for data binding to IObservables in xaml</Description>
+    <PackageProjectUrl>https://github.com/aL3891/ObservableDatabinding</PackageProjectUrl>
+    <PackageTags>xaml databinding rx IObservable</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
