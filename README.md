@@ -15,7 +15,6 @@ and bind to it like this:
 
     <TextBox Text="{x:Bind Model.MyProperty.Value, Mode=OneWay}"></TextBox>
 
-
 The Observable of MyProperty can then be set to any observable and the binding will update for each value:
 
-    OneWay.Observable = Observable.Interval(TimeSpan.FromSeconds(1)).Select(t => t.ToString());
+    MyProperty.Observable = Observable.Interval(TimeSpan.FromSeconds(1)).Select(t => t.ToString());
