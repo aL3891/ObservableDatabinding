@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+VisualStudioVersion = 15.0.26510.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObservableDatabinding", "ObservableDatabinding\ObservableDatabinding.csproj", "{86E2A3DC-1B24-4160-B29F-15AE56528CBC}"
 EndProject
@@ -25,18 +25,18 @@ Global
 		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|ARM.Build.0 = Debug|Any CPU
-		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|x64.ActiveCfg = Debug|x64
-		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|x64.Build.0 = Debug|x64
-		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|x86.ActiveCfg = Debug|x86
-		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|x86.Build.0 = Debug|x86
+		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|x64.Build.0 = Debug|Any CPU
+		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Debug|x86.Build.0 = Debug|Any CPU
 		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|ARM.ActiveCfg = Release|Any CPU
 		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|ARM.Build.0 = Release|Any CPU
-		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|x64.ActiveCfg = Release|x64
-		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|x64.Build.0 = Release|x64
-		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|x86.ActiveCfg = Release|x86
-		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|x86.Build.0 = Release|x86
+		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|x64.ActiveCfg = Release|Any CPU
+		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|x64.Build.0 = Release|Any CPU
+		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|x86.ActiveCfg = Release|Any CPU
+		{86E2A3DC-1B24-4160-B29F-15AE56528CBC}.Release|x86.Build.0 = Release|Any CPU
 		{7D4D45E4-6D65-44B7-BC04-5F9D2643AFCD}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{7D4D45E4-6D65-44B7-BC04-5F9D2643AFCD}.Debug|ARM.ActiveCfg = Debug|ARM
 		{7D4D45E4-6D65-44B7-BC04-5F9D2643AFCD}.Debug|ARM.Build.0 = Debug|ARM
