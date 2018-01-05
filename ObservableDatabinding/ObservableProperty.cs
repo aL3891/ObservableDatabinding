@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Reactive.Linq;
 using System.Reactive.Subjects;
 
 namespace ObservableDatabinding
@@ -7,19 +8,18 @@ namespace ObservableDatabinding
 	public class ObservableProperty<T> : INotifyPropertyChanged
 	{
 		private Subject<IObservable<T>> observables;
-		private IObservable<T> observable;
+		private IObservable<T> outputObservable;
 		Subject<T> valueSubject;
 		private T value;
-		private bool valueSubjectInUse;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public ObservableProperty()
 		{
 			observables = new Subject<IObservable<T>>();
-			observable = System.Reactive.Linq.Observable.Switch(observables);
+			outputObservable = System.Reactive.Linq.Observable.Switch(observables).Merge(valueSubject);
 
-			observable.Subscribe(t =>
+			outputObservable.Subscribe(t =>
 			{
 				value = t;
 				PropertyChanged?.Invoke(this, Shared.ValueChanged);
@@ -29,29 +29,13 @@ namespace ObservableDatabinding
 		public T Value
 		{
 			get { return value; }
-			set
-			{
-				if (valueSubject == null)
-					valueSubject = new Subject<T>();
-
-				if (!valueSubjectInUse)
-				{
-					observables.OnNext(valueSubject);
-					valueSubjectInUse = true;
-				}
-
-				valueSubject.OnNext(value);
-			}
+			set { valueSubject.OnNext(value); }
 		}
 
 		public IObservable<T> Observable
 		{
-			get { return observable; }
-			set
-			{
-				observables.OnNext(value);
-				valueSubjectInUse = false;
-			}
+			get { return outputObservable; }
+			set { observables.OnNext(value); }
 		}
 
 		public void Handler(object sender, T e)
