@@ -8,14 +8,17 @@ namespace ObservableDatabinding
 {
     class ViewModel
     {
-        public XamlObservable<string> OneWay { get; set; } = new XamlObservable<string>();
-        public XamlSubject<string> TwoWay { get; set; } = new XamlSubject<string>();
-        public XamlCommandObservable<string> Command { get; set; } = new XamlCommandObservable<string>();
+        public ObservableProperty<string> OneWay { get; set; } = new ObservableProperty<string>();
+        public ObservableProperty<string> TwoWay { get; set; } = new ObservableProperty<string>();
+        public ObservableCommand<string> Command { get; set; } = new ObservableCommand<string>();
+		public ObservableProperty<int> ClicksPerSec { get; set; } = new ObservableProperty<int>();
 
-        public ViewModel()
+		public ViewModel()
         {
             OneWay.Observable = TwoWay.Observable.Select(s => s.ToUpper());
-            Command.CanExecute = TwoWay.Observable.Select(s => s.Length > 5);
-        }
+            Command.CanExecute.Observable = TwoWay.Observable.Select(s => s.Length > 5);
+
+			ClicksPerSec.Observable = Command.Command.Observable.Buffer(TimeSpan.FromSeconds(0.3)).Select(d => d.Count);
+		}
     }
 }
