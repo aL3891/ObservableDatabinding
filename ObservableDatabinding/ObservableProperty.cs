@@ -7,16 +7,15 @@ namespace ObservableDatabinding
 {
 	public class ObservableProperty<T> : INotifyPropertyChanged
 	{
-		private Subject<IObservable<T>> observables;
+		private Subject<IObservable<T>> observables = new Subject<IObservable<T>>();
 		private IObservable<T> outputObservable;
-		Subject<T> valueSubject;
+		Subject<T> valueSubject = new Subject<T>();
 		private T value;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public ObservableProperty()
 		{
-			observables = new Subject<IObservable<T>>();
 			outputObservable = System.Reactive.Linq.Observable.Switch(observables).Merge(valueSubject);
 
 			outputObservable.Subscribe(t =>
