@@ -11,6 +11,6 @@
         <TextBox Text="{Binding OneWay.Value, Mode=OneWay}"></TextBox>
         <TextBox Text="{Binding TwoWay.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <Button Command="{Binding Command}" CommandParameter="{Binding TwoWay.Value}" Content="{Binding OneWay.Value, Mode=OneWay}"></Button>
-		<Label Content="{Binding ClicksPerSec.Value}"/>
+		<Label Content="{Binding ClicksPerSec.Value, Mode=OneWay}"/>
 	</StackPanel>
 </Window>

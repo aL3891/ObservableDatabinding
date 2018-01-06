@@ -11,5 +11,6 @@
         <TextBox Text="{x:Bind Model.OneWay.Value, Mode=OneWay}"></TextBox>
         <TextBox Text="{x:Bind Model.TwoWay.Value, Mode=TwoWay}"></TextBox>
         <Button PointerMoved="{x:Bind Model.MouseEvents.Handler}" Command="{x:Bind Model.Command}" CommandParameter="{x:Bind Model.TwoWay.Value}" Content="{x:Bind Model.OneWay.Value, Mode=OneWay}"></Button>
+		<TextBlock Text="{x:Bind Model.ClicksPerSec.Value, Mode=OneWay}"/>
     </StackPanel>
 </Page>

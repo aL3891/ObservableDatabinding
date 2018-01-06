@@ -14,8 +14,14 @@ namespace ObservableDatabinding
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		public ObservableProperty()
+		public ObservableProperty() : this (default(T))
 		{
+
+		}
+
+		public ObservableProperty(T initialValue)
+		{
+			
 			outputObservable = System.Reactive.Linq.Observable.Switch(observables).Merge(valueSubject);
 
 			outputObservable.Subscribe(t =>
@@ -23,6 +29,7 @@ namespace ObservableDatabinding
 				value = t;
 				PropertyChanged?.Invoke(this, Shared.ValueChanged);
 			});
+			Value = initialValue;
 		}
 
 		public T Value
